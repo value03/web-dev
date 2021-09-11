@@ -1,6 +1,8 @@
 var w = window.innerWidth;
 var h = window.innerHeight;  
 
+
+
 if (h > w) {
     var limit = w - 100;
 } else {
@@ -12,10 +14,13 @@ if (h > w) {
 //------
 
 
+
+
 let circles = function(p) {
 
   p.setup = function() {
-   p.createCanvas(w, 2000); 
+   var ciccanvas = p.createCanvas(w, 2000); 
+   ciccanvas.id("c1");
   }
 
   p.draw = function() {
@@ -23,6 +28,7 @@ let circles = function(p) {
 
     //getting scrollposition
     var pos = getScrollXY();
+    console.log(pos);
 
     p.translate(w / 2, h / 2);
 
@@ -48,16 +54,18 @@ new p5(circles, "container");
 
 
 
-var strum = 3;
+var strum = 2;
 
 
 let sinus = function(p) {
 
   p.setup = function() {
-    p.createCanvas(w, 400);
+    var sinc = p.createCanvas(w, 400);
+    sinc.id("c2");
   }
 
   p.draw = function() {
+
     p.background(220);
 
 
@@ -71,7 +79,7 @@ let sinus = function(p) {
     p.strokeWeight(10);
     
     p.beginShape(p.LINES);
-    for(var x = 0; x < p.map(getScrollXY(), 1400, 1900, 0, w) ; x++){
+    for(var x = 0; x < p.map(getScrollXY(), 1400, scrollHeight, 0, w) ; x++){
       //var angle = map(x, 0, width, 0, TWO_PI);
       var angle = x * 0.01;
       // map x between 0 and width to 0 and Two Pi
@@ -82,7 +90,22 @@ let sinus = function(p) {
   }
 }
 
-new p5(sinus, "bottom container")
+//new p5(sinus, "bottom container")
+
+let bar = function(p) {
+
+  p.setup() {
+    
+
+  }
+
+  p.draw() {
+
+  }
+}
+
+
+
 
 
 

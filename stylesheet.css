@@ -2,6 +2,7 @@ body {
     margin: 0;
     background-color: #8969B3;
     text-align: center;
+    overflow: scroll;
 }
 .navbar {
     margin: 0;
@@ -17,6 +18,10 @@ h1 {
 
 .creepynavbar {
     margin: 0;
+}
+
+#circcanvas {
+    display: block;
 }
 
 .hebdfressi {
