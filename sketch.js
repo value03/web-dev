@@ -23,7 +23,6 @@ let circles = function(p) {
 
     //getting scrollposition
     var pos = getScrollXY();
-    console.log(pos);
 
     p.translate(w / 2, h / 2);
 
@@ -49,7 +48,7 @@ new p5(circles, "container");
 
 
 
-var strum = 2;
+var strum = 3;
 
 
 let sinus = function(p) {
