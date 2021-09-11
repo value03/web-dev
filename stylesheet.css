@@ -1,0 +1,86 @@
+body {
+    margin: 0;
+    background-color: #8969B3;
+    text-align: center;
+}
+.navbar {
+    margin: 0;
+}
+
+p {
+    padding: 50px;
+}
+
+h1 {
+    padding: 100px;
+}
+
+.creepynavbar {
+    margin: 0;
+}
+
+.hebdfressi {
+    margin: 0;
+    padding: 0;
+    background-color: #8969B3;
+}
+
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+
+li.creepylogoPicture {
+    height: 10px;
+}
+
+li {
+    float: left;
+    height: 50px;
+    padding: 5px;
+}
+
+
+.logoPicture {
+    width: 10%;
+}
+
+
+.nav {
+    display: block;
+    padding: 8px;
+    color: #222034;
+    text-decoration: none;
+    text-align: center;
+    font-size: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.nav:hover {
+    background-color: salmon;
+}
+
+.logoPicture:hover {
+    background-color: teal;
+}
+
+p {
+    color: #FF6874;
+}
+
+.Input {
+    width: 500px;
+}
+
+.Poem {
+    font-size: 5000px;
+    color: yellow;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
