@@ -2441,3 +2441,4 @@ phpMyAdmin/vendor/twig/twig/src/Util/DeprecationCollector.php
 phpMyAdmin/vendor/twig/twig/src/Util/TemplateDirIterator.php
 web_images/bg.png
 web_images/icon.png
+.vscode/launch.json

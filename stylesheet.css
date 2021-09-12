@@ -1,8 +1,11 @@
 body {
     margin: 0;
-    background-color: #8969B3;
+    padding: 0d;
+    background-color: #1E1E1E;
     text-align: center;
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: block;
 }
 .navbar {
     margin: 0;
@@ -20,9 +23,17 @@ h1 {
     margin: 0;
 }
 
-#circcanvas {
+
+
+#canvas {
     display: block;
+    position: absolute;
+    outline: 0;
+    margin: 50;
+    overflow: hidden;
 }
+
+
 
 .hebdfressi {
     margin: 0;

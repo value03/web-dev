@@ -13,19 +13,26 @@ if (h > w) {
 //CIRCLE SECTION
 //------
 
+var fade;
+var fadeAmount = 3;
 
 
 
 let circles = function(p) {
 
   p.setup = function() {
-   var ciccanvas = p.createCanvas(w, 2000); 
-   ciccanvas.id("c1");
+    p.createCanvas(w, 2000); 
+    fade = 0;
   }
 
   p.draw = function() {
-    p.background("#8969B3");
+    var w = window.innerWidth;
+    var h = window.innerHeight;  
+  
+    p.resizeCanvas(w, 2000);
 
+    //p.background("#8969B3");
+    p.background(30);
     //getting scrollposition
     var pos = getScrollXY();
     console.log(pos);
@@ -47,10 +54,36 @@ let circles = function(p) {
     for (var i = 0;i < getLimit(); i += 10) {
       p.ellipse(0, pos * 2, i);
     }
+
+    if (pos > 430) {
+      var baseScroll = pos - 430;
+
+      var basePos = Math.floor(pos);
+
+      //setup
+      p.noStroke();
+      p.textSize(40);
+      p.textAlign(p.CENTER);
+
+      //first text
+      p.fill(250, 250, 250, baseScroll);
+      p.text("Home", 0, basePos);
+
+      //second text
+      p.fill(250, 250, 250, baseScroll - 200);
+      p.text("Work", 0, basePos + 40);
+
+      //third text
+      p.fill(250, 250, 250, baseScroll - 400);
+      p.text("About Me", 0, basePos + 80);
+
+
+    }
   }
 }
 
-new p5(circles, "container");
+new p5(circles);
+
 
 
 
@@ -92,17 +125,7 @@ let sinus = function(p) {
 
 //new p5(sinus, "bottom container")
 
-let bar = function(p) {
 
-  p.setup() {
-    
-
-  }
-
-  p.draw() {
-
-  }
-}
 
 
 
@@ -127,15 +150,6 @@ function getScrollXY() {
   return scrOfY;
 }
 
-
-
-function windowResized() {
-  var w = window.innerWidth;
-  var h = window.innerHeight;  
-  
-  resizeCanvas(w, h);
-
-}
 
 function getLimit() {
   var w = window.innerWidth;
