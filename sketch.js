@@ -3,11 +3,7 @@ var h = window.innerHeight;
 
 
 
-if (h > w) {
-    var limit = w - 100;
-} else {
-    var limit = h - 100;
-}
+
 
 //------
 //CIRCLE SECTION
@@ -21,15 +17,25 @@ var fadeAmount = 3;
 let circles = function(p) {
 
   p.setup = function() {
-    p.createCanvas(w, 2000); 
+    p.createCanvas(w, h * 3); 
     fade = 0;
+    p.frameRate(60);
   }
 
   p.draw = function() {
     var w = window.innerWidth;
-    var h = window.innerHeight;  
+    var h = window.innerHeight;
+
+    var menuSize = p.map(w, 40, 2000, 80, 40)
+    var spacing = p.map(w, 40, 2000, 80, 40);
+
+    if (h > w) {
+      var limit = w - 100;
+    } else {
+      var limit = h - 100;
+    }
   
-    p.resizeCanvas(w, 2000);
+    p.resizeCanvas(w, h*3);
 
     //p.background("#8969B3");
     p.background(30);
@@ -46,12 +52,12 @@ let circles = function(p) {
     p.noFill();
 
     //draw the static circle
-    for (var i = 0;i < getLimit(); i += 10) {
+    for (var i = 0;i < limit; i += 10) {
       p.ellipse(0, 0, i);
     }
 
     //draw moving Circle
-    for (var i = 0;i < getLimit(); i += 10) {
+    for (var i = 0;i < limit; i += 10) {
       p.ellipse(0, pos * 2, i);
     }
 
@@ -62,27 +68,27 @@ let circles = function(p) {
 
       //setup
       p.noStroke();
-      p.textSize(40);
+      p.textSize(menuSize);
       p.textAlign(p.CENTER);
 
       //first text
       p.fill(250, 250, 250, baseScroll);
-      p.text("Home", 0, basePos);
+      p.text("Home", 0, basePos - spacing);
 
       //second text
       p.fill(250, 250, 250, baseScroll - 200);
-      p.text("Work", 0, basePos + 40);
+      p.text("Work", 0, spacing);
 
       //third text
       p.fill(250, 250, 250, baseScroll - 400);
-      p.text("About Me", 0, basePos + 80);
+      p.text("About Me", 0, basePos + spacing);
 
 
     }
   }
 }
 
-new p5(circles);
+new p5(circles, "container");
 
 
 
@@ -148,17 +154,4 @@ function getScrollXY() {
     scrOfX = document.documentElement.scrollLeft;
   }
   return scrOfY;
-}
-
-
-function getLimit() {
-  var w = window.innerWidth;
-  var h = window.innerHeight;  
-
-  if (h > w) {
-    var limit = w - 100;
-  } else {
-    var limit = h - 100;
-  }
-  return limit
 }
